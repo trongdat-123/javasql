@@ -1,0 +1,9 @@
+.button{
+    -fx-text-fill: WHITE;
+}
+.button:hover{
+    -fx-text-fill: DEEPSKYBLUE;
+}
+.button:pressed{
+    -fx-text-fill: WHITE;
+}

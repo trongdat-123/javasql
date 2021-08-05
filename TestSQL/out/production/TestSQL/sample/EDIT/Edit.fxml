@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="759.0" prefWidth="957.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.EDIT.Edit">
+    <right>
+        <BorderPane prefHeight="702.0" prefWidth="689.0" BorderPane.alignment="CENTER">
+            <top>
+                <Pane prefHeight="157.0" prefWidth="683.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <TextField fx:id="Name" layoutX="251.0" layoutY="35.0" prefHeight="28.0" prefWidth="172.0" promptText="Họ tên" style="-fx-border-color: #00BFFF; -fx-border-radius: 8px; -fx-background-color: transparent;">
+                     <font>
+                        <Font size="13.0" />
+                     </font></TextField>
+                        <ComboBox fx:id="comboBox" layoutX="38.0" layoutY="63.0" onAction="#comboboxChange" prefHeight="35.0" prefWidth="165.0" promptText="Loại thẻ" style="-fx-border-color: #00BFFF; -fx-border-radius: 8px; -fx-background-color: transparent;" />
+                        <Button fx:id="close1" layoutX="661.0" mnemonicParsing="false" onAction="#Close1" style="-fx-background-color: transparent;" text="X" />
+                        <Label fx:id="label" layoutX="47.0" layoutY="72.0" prefHeight="17.0" prefWidth="46.0" text="Loại thẻ" />
+                  <TextField fx:id="IdentityCard" layoutX="479.0" layoutY="35.0" prefHeight="28.0" prefWidth="172.0" promptText="CMND/CCCD" style="-fx-border-color: #00BFFF; -fx-border-radius: 8px; -fx-background-color: transparent;">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="Money" layoutX="477.0" layoutY="96.0" prefHeight="28.0" prefWidth="172.0" promptText="Số dư tài khoản" style="-fx-border-color: #00BFFF; -fx-border-radius: 8px; -fx-background-color: transparent;">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <ImageView fx:id="image1" fitHeight="31.0" fitWidth="28.0" layoutX="17.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/credit.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="22.0" fitWidth="23.0" layoutX="235.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/user.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="31.0" fitWidth="28.0" layoutX="457.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/id-card.png" />
+                     </image></ImageView>
+                  <ImageView fitHeight="31.0" fitWidth="28.0" layoutX="457.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/wallet.png" />
+                     </image>
+                  </ImageView>
+                  <DatePicker fx:id="Date" layoutX="251.0" layoutY="96.0" prefHeight="30.0" prefWidth="174.0" promptText="Ngày mở thẻ" style="-fx-border-color: #00BFFF; -fx-border-radius: 8px; -fx-background-color: transparent;" />
+                  <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="232.0" layoutY="98.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/calendar.png" />
+                     </image>
+                  </ImageView>
+                    </children>
+                </Pane>
+            </top>
+            <bottom>
+                <TableView fx:id="table1" onMouseClicked="#Show" prefHeight="601.0" prefWidth="683.0" BorderPane.alignment="CENTER">
+                    <columns>
+                        <TableColumn fx:id="typeColumn" prefWidth="96.0" text="Loại thẻ" />
+                        <TableColumn fx:id="nameColumn" minWidth="94.4000244140625" prefWidth="111.0" text="Họ tên " />
+                        <TableColumn fx:id="identityCardColumn" minWidth="100.0" prefWidth="133.0" text="CMND/CCCD" />
+                        <TableColumn fx:id="dateColumn" minWidth="96.0" prefWidth="121.0" text="Ngày mở thẻ" />
+                        <TableColumn fx:id="moneyColumn" minWidth="100.0" prefWidth="109.0" text="Tài khoản (VND)" />
+                        <TableColumn fx:id="feeColumn" minWidth="80.0" prefWidth="112.0" text="Phí duy trì (VND)" />
+                    </columns>
+                </TableView>
+            </bottom>
+        </BorderPane>
+    </right>
+    <left>
+        <AnchorPane prefHeight="759.0" prefWidth="274.0" style="-fx-background-color: #1D2026;" BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="button1" layoutY="149.0" mnemonicParsing="false" onAction="#delete" prefHeight="68.0" prefWidth="274.0" style="-fx-background-color: transparent;" stylesheets="@../but.css" text="      Xóa thẻ" textFill="WHITE">
+                    <font>
+                        <Font name="Trebuchet MS Italic" size="18.0" />
+                    </font>
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color green="0.7490196228027344" blue="1.0" />
+                     </color>
+                  </DropShadow>
+               </effect>
+                </Button>
+                <Button fx:id="button3" layoutY="284.0" mnemonicParsing="false" onAction="#reset" prefHeight="68.0" prefWidth="274.0" style="-fx-background-color: transparent;" stylesheets="@../but.css" text="       Làm mới" textFill="WHITE">
+                    <font>
+                        <Font name="Trebuchet MS Italic" size="18.0" />
+                    </font>
+                    <effect>
+                        <DropShadow>
+                            <color>
+                                <Color green="0.7490196228027344" blue="1.0" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </Button>
+                <Button fx:id="button2" layoutY="217.0" mnemonicParsing="false" onAction="#Update" prefHeight="68.0" prefWidth="274.0" style="-fx-background-color: transparent;" stylesheets="@../but.css" text="        Cập nhật thông tin" textFill="WHITE">
+                    <font>
+                        <Font name="Trebuchet MS Italic" size="18.0" />
+                    </font>
+                    <effect>
+                        <DropShadow>
+                            <color>
+                                <Color green="0.7490196228027344" blue="1.0" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </Button>
+                <Button fx:id="button" layoutY="79.0" mnemonicParsing="false" onAction="#Add" prefHeight="68.0" prefWidth="274.0" style="-fx-background-color: transparent;" stylesheets="@../but.css" text="      Thêm thẻ" textFill="WHITE">
+                    <font>
+                        <Font name="Trebuchet MS Italic" size="18.0" />
+                    </font>
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color green="0.7490196228027344" blue="1.0" />
+                     </color>
+                  </DropShadow>
+               </effect>
+                </Button>
+                <ImageView fitHeight="44.0" fitWidth="46.0" layoutX="7.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/add-user.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="44.0" fitWidth="46.0" layoutX="3.0" layoutY="157.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/delete.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="49.0" fitWidth="50.0" layoutX="10.0" layoutY="231.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/refresh.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="39.0" fitWidth="38.0" layoutX="12.0" layoutY="299.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/exchange.png" />
+                    </image>
+                </ImageView>
+                <Label fx:id="management" layoutX="39.0" layoutY="29.0" text="MANAGEMENT" textFill="#00bfff">
+                    <font>
+                        <Font name="Trebuchet MS Bold" size="30.0" />
+                    </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+                </Label>
+                <Button fx:id="button4" layoutY="360.0" mnemonicParsing="false" onAction="#SEARCH" prefHeight="61.0" prefWidth="274.0" style="-fx-background-color: transparent;" stylesheets="@../but.css" text="     Tìm kiếm" textFill="WHITE">
+                    <font>
+                        <Font name="Trebuchet MS Italic" size="18.0" />
+                    </font>
+                    <effect>
+                        <DropShadow>
+                            <color>
+                                <Color green="0.7490196228027344" blue="1.0" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </Button>
+                <ImageView fitHeight="39.0" fitWidth="38.0" layoutX="11.0" layoutY="374.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/loupe.png" />
+                    </image>
+                </ImageView>
+                <Button fx:id="button5" layoutX="-1.0" layoutY="501.0" mnemonicParsing="false" onAction="#Print" prefHeight="60.0" prefWidth="274.0" style="-fx-background-color: transparent;" stylesheets="@../but.css" text="       Thống kê" textFill="WHITE">
+                    <font>
+                        <Font name="Trebuchet MS Italic" size="18.0" />
+                    </font>
+                    <effect>
+                        <DropShadow>
+                            <color>
+                                <Color green="0.7490196228027344" blue="1.0" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </Button>
+                <ImageView fitHeight="39.0" fitWidth="38.0" layoutX="11.0" layoutY="513.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/printer.png" />
+                    </image>
+                </ImageView>
+                <Button fx:id="button6" layoutY="612.0" mnemonicParsing="false" onAction="#Caculate" prefHeight="57.0" prefWidth="274.0" style="-fx-background-color: transparent;" stylesheets="@../but.css" text="       Doanh thu" textFill="WHITE">
+                    <font>
+                        <Font name="Trebuchet MS Italic" size="18.0" />
+                    </font>
+                    <effect>
+                        <DropShadow>
+                            <color>
+                                <Color green="0.7490196228027344" blue="1.0" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </Button>
+                <ImageView fitHeight="47.0" fitWidth="44.0" layoutX="13.0" layoutY="616.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/calculator.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="33.0" fitWidth="32.0" layoutX="12.0" layoutY="720.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/previous.png" />
+                    </image>
+                </ImageView>
+                <Button fx:id="button7" layoutY="712.0" mnemonicParsing="false" onAction="#Back" prefHeight="47.0" prefWidth="274.0" style="-fx-background-color: transparent;" stylesheets="@../but.css" text="       Back" textFill="WHITE">
+                    <font>
+                        <Font name="Trebuchet MS Italic" size="18.0" />
+                    </font>
+                    <effect>
+                        <DropShadow>
+                            <color>
+                                <Color green="0.7490196228027344" blue="1.0" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </Button>
+                <TextField fx:id="Number" layoutX="71.0" layoutY="570.0" prefHeight="27.0" prefWidth="174.0" promptText="Number" style="-fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;">
+                    <font>
+                        <Font name="Trebuchet MS" size="13.0" />
+                    </font>
+                    <effect>
+                        <Lighting light="$null">
+                            <bumpInput>
+                                <Shadow />
+                            </bumpInput>
+                        </Lighting>
+                    </effect></TextField>
+                <TextField fx:id="Month" layoutX="72.0" layoutY="674.0" prefWidth="173.0" promptText="Month" style="-fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;">
+                    <font>
+                        <Font name="Trebuchet MS" size="13.0" />
+                    </font>
+                    <effect>
+                        <Lighting light="$null">
+                            <bumpInput>
+                                <Shadow />
+                            </bumpInput>
+                        </Lighting>
+                    </effect></TextField>
+                <Line endX="196.60003662109375" layoutX="75.0" layoutY="356.0" startX="-75.00001525878906" stroke="#0598ff" />
+                <TextField fx:id="searchName" layoutX="70.0" layoutY="426.0" prefHeight="27.0" prefWidth="174.0" promptText="Họ tên" style="-fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;">
+                    <effect>
+                        <Lighting light="$null">
+                            <bumpInput>
+                                <Shadow />
+                            </bumpInput>
+                        </Lighting>
+                    </effect>
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                </TextField>
+            <DatePicker fx:id="searchDate" layoutX="70.0" layoutY="470.0" prefHeight="30.0" prefWidth="175.0" promptText="Ngày mở thẻ" style="-fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;">
+               <effect>
+                  <Lighting light="$null">
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                  </Lighting>
+               </effect>
+            </DatePicker>
+            </children>
+        </AnchorPane>
+    </left>
+</BorderPane>
